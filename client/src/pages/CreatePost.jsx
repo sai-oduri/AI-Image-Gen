@@ -9,7 +9,7 @@ import { FormField, Loader } from '../components';
 const CreatePost = () => {
 
   const navigate = useNavigate();
-  const [form, setFrom] = useState({
+  const [form, setForm] = useState({
     name: '',
     prompt: '',
     photo: ''
@@ -33,7 +33,7 @@ const CreatePost = () => {
 
         const data = await response.json();
 
-        setFrom({ ...form, photo: data.photo });
+        setForm({ ...form, photo: data.photo });
 
       } catch (error) {
         alert("Error");
@@ -50,12 +50,12 @@ const CreatePost = () => {
   };
 
   const handleChange = (e) => {
-    setFrom({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSurpriseMe = () => {
     const randomPrompt = getRandomPrompt(form.prompt);
-    setFrom({ ...form, prompt: randomPrompt });
+    setForm({ ...form, prompt: randomPrompt });
   };
 
   return (
