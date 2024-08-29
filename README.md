@@ -21,3 +21,7 @@
 
  - **Frontend** - Netlify
  - **Backend** - Render
+   
+## Note
+
+You can try locally with your own OpenAI(DALL-E) API-KEY.
