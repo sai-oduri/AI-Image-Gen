@@ -17,7 +17,19 @@ cloudinary.config({
 // get all posts
 
 router.get('/', async (req, res) => {
-
+    try {
+        const posts = await Post.find({});
+        res.status(200).json({
+            success: true,
+            data: posts,
+        })
+    } catch (error) {
+        console.log("inside get")
+        res.status(500).json({
+            success: false,
+            message: error,
+        })
+    }
 });
 
 // create a post
@@ -30,8 +42,8 @@ router.post('/', async (req, res) => {
         const newPost = await Post.create({
             name,
             prompt,
-            photo: photoUrl,
-        })
+            photo: photoUrl.url,
+        });
 
         res.status(201).json({
             success: true,

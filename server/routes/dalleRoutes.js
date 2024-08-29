@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { prompt } = req.body;
+        const { prompt } = req.body
 
         const aiResponse = await openai.images.generate({
             prompt,
@@ -30,7 +30,8 @@ router.post('/', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).send("error");
+        // res.status(500).send("error");
+        res.status(500).json({ message: "error" });
     }
 })
 
