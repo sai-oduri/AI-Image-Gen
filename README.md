@@ -24,4 +24,4 @@
    
 ## Note
 
-You can try locally with your own OpenAI(DALL-E) API-KEY.
+You can try locally with your own OpenAI(DALL-E) and Cloudinary API-KEY.
